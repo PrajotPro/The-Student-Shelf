@@ -1,0 +1,94 @@
+/* Basic Reset and Global Variables */
+:root {
+  --primary-color: #3f51b5; /* Indigo */
+  --secondary-color: #ffc107; /* Amber */
+  --background-light: #f4f7f9;
+  --text-dark: #2c3e50;
+  --text-light: #ecf0f1;
+  --box-shadow-light: 0 4px 8px rgba(0, 0, 0, 0.1);
+  --transition-speed: 0.3s;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: var(--background-light);
+  color: var(--text-dark);
+  line-height: 1.6;
+  
+}
+
+/* App Container and Layout */
+.app-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; /* <-- Keeps the content stretching the full screen height */
+  min-width: 100vmax;
+  width: 100%;
+}
+
+.content-area {
+  flex-grow: 1;
+  padding: 20px;
+  max-width: 1400px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+/* Common Interactive Elements - Buttons */
+.btn {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color var(--transition-speed), transform var(--transition-speed), box-shadow var(--transition-speed);
+}
+
+.btn-primary {
+  background-color: var(--primary-color);
+  color: var(--text-light);
+}
+
+.btn-primary:hover {
+  background-color: #303f9f; /* Darker Indigo */
+  transform: translateY(-2px);
+  box-shadow: 0 4px 10px rgba(63, 81, 181, 0.4);
+}
+
+/* Card Style for Components (e.g., Auth forms, Product Items) */
+.card {
+  background-color: white;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: var(--box-shadow-light);
+  animation: fadeIn 0.5s ease-out; /* Simple entry animation */
+}
+
+/* Keyframe Animation */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* General Mobile Optimization */
+@media (max-width: 600px) {
+  .content-area {
+    padding: 10px; /* Reduce overall padding on small screens */
+  }
+  
+  /* Make navbar links stack or condense if necessary (depends on Navbar.css) */
+  .navbar-links {
+    /* If the navbar links overflow, you might need a mobile menu setup */
+  }
+
+  /* Product Grid adjustment */
+  .product-grid {
+    grid-template-columns: 1fr; /* Single column layout for product cards */
+  }
+}

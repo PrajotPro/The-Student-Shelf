@@ -1,0 +1,108 @@
+.auth-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 80vh; /* Centers the form vertically */
+}
+
+.auth-form {
+  max-width: 400px;
+  width: 100%;
+  text-align: center;
+  /* Override card defaults for a tighter look */
+  padding: 40px;
+}
+
+.auth-form h2 {
+  color: var(--primary-color);
+  margin-bottom: 25px;
+  font-size: 1.8em;
+}
+
+.input-group {
+  margin-bottom: 20px;
+  text-align: left;
+}
+
+.input-group label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 600;
+  color: #333;
+}
+
+.input-group input {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 1em;
+  transition: border-color var(--transition-speed), box-shadow var(--transition-speed);
+  
+}
+
+.input-group input:focus {
+  border-color: var(--primary-color);
+  box-shadow: 0 0 5px #ccc;
+  outline: none;
+}
+
+.auth-form .btn-primary {
+  width: 100%;
+  margin-top: 10px;
+  font-size: 1.1em;
+}
+
+.auth-footer {
+  margin-top: 20px;
+  font-size: 0.95em;
+}
+
+.auth-footer a {
+  color: var(--primary-color);
+  text-decoration: none;
+  font-weight: bold;
+  transition: color var(--transition-speed);
+}
+
+.auth-footer a:hover {
+  color: #303f9f;
+}
+
+.error-message {
+  color: #e74c3c; /* Red color */
+  background-color: #fceae9;
+  padding: 10px;
+  border-radius: 5px;
+  margin-bottom: 15px;
+  border: 1px solid #e74c3c;
+  animation: slideDown 0.3s ease-out;
+}
+
+@keyframes slideDown {
+  from { opacity: 0; transform: translateY(-10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+/* src/components/Auth/AuthForm.css */
+
+/* ... (existing styles) ... */
+
+.input-group input {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 1em;
+  transition: border-color var(--transition-speed), box-shadow var(--transition-speed);
+  
+  /* *** IMPORTANT FIXES FOR APPEARANCE *** */
+  background-color: white !important; /* Forces white background */
+  color: var(--text-dark) !important; /* Ensures text is dark and readable */
+  /* You may need !important if another CSS rule is overriding this */
+}
+
+.input-group input:focus {
+  border-color: var(--primary-color);
+  box-shadow: 0 0 5px rgba(63, 81, 181, 0.3);
+  outline: none;
+}
